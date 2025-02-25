@@ -1,63 +1,88 @@
 # CryptoChecker
 
-## Project Overview
-CryptoChecker is a web application built using Angular that provides real-time cryptocurrency price tracking and analysis. It is designed to help users stay updated with the latest market trends, analyze price movements, and monitor their favorite cryptocurrencies in a user-friendly interface.
+## 🚀 Overview
+CryptoChecker is an Angular-based cryptocurrency tracking web application that provides real-time market data, trending coins, and graphical representations of price changes. The project leverages the CoinGecko API to fetch cryptocurrency data and implements OAuth login for a secure user experience.
 
-## Problem Statement
-The cryptocurrency market is highly volatile, and prices fluctuate frequently. Traders and investors need an efficient way to track real-time price updates and analyze historical trends. Many available solutions are either too complex for beginners or lack customization options. This project aims to bridge the gap by offering a lightweight, intuitive, and responsive crypto price tracking solution.
+## 🎯 Problem Statement
+With the rising interest in cryptocurrency investments, users need a reliable, real-time tracker that provides market trends, price analysis, and insights in an easy-to-understand format. CryptoCheckerYt aims to bridge this gap by offering an interactive and user-friendly interface for tracking cryptocurrency trends.
 
-## Motive
-The main objective of CryptoCheckerYt is to create an easy-to-use cryptocurrency tracking platform that provides:
-- Real-time price updates
-- Historical price trends
-- Interactive data visualization
-- A seamless user experience with a responsive UI
+## 🔍 Features & Enhancements
+### ✅ **Core Features:**
+- Real-time cryptocurrency price tracking.
+- Trending coins list sorted by market cap.
+- Graphical representation of price trends over selected timeframes.
+- Currency selector to switch between different fiat currencies.
+- OAuth login with Google/MetaMask for secure authentication.
+- Mobile-responsive UI with a modern Material Design theme.
+- GitHub Actions workflow for automated deployment.
 
-By leveraging Angular's powerful framework, TypeScript's type safety, and SCSS for modern styling, this project ensures scalability and maintainability.
+### 🛠 **Recent Enhancements:**
+1. **Performance Optimizations:**
+   - `CurrencyService` now optimally manages state using `BehaviorSubject`.
+   - API calls are optimized to avoid redundant requests.
+   - Lazy loading of components for faster load times.
+2. **Security Improvements:**
+   - API keys moved to `environment.ts` for better security.
+   - Firebase OAuth authentication added to secure logins.
+3. **Deployment Enhancements:**
+   - GitHub Actions workflow added for automated deployment to GitHub Pages.
+   - Improved `index.html` and `style.scss` for a better user experience.
 
-## Features
-- **Live Cryptocurrency Price Updates:** Fetches real-time prices from a reliable API.
-- **Search and Filter:** Users can search for specific cryptocurrencies and filter by market cap, volume, or other metrics.
-- **Graphical Representation:** Displays price trends in an interactive graph.
-- **Custom Watchlist:** Users can mark their favorite cryptocurrencies for quick access.
-- **Responsive Design:** Ensures usability across different devices.
+## ⚙️ Installation & Setup
+### Prerequisites
+Ensure you have **Node.js (v18+)** and **Angular CLI (v13.1.4 or later)** installed.
 
-## Technologies Used
-- **Frontend Framework:** Angular (CLI v13.1.4)
-- **Languages:** TypeScript, JavaScript, HTML, SCSS
-- **Data Handling:** API integration for real-time data retrieval
-- **Build System:** Angular CLI
-
-## Installation & Setup
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/your-repo/CryptoChecker.git
-   cd CryptoChecker
-   ```
-2. Install dependencies:
-   ```sh
-   npm install
-   ```
-3. Run the development server:
-   ```sh
-   ng serve
-   ```
-   Navigate to `http://localhost:5000/` in your browser.
-
-## Running Tests
-- **Unit Tests:** Run `ng test` to execute tests using Karma.
-- **End-to-End Tests:** Run `ng e2e` after adding an E2E testing package.
-
-## Build
-To build the project, run:
-```sh
-ng build
+### Clone the Repository
+```bash
+git clone https://github.com/prajeeta15/CryptoChecker.git
+cd CryptoChecker
 ```
-The compiled files will be stored in the `dist/` directory.
 
-## Contribution & Support
-For any contributions, feel free to submit a pull request. If you encounter any issues, open a GitHub issue for support.
+### Install Dependencies
+```bash
+npm install
+```
 
-## License
-This project is open-source and available under the [MIT License](LICENSE).
+### Run the Development Server
+```bash
+ng serve
+```
+Navigate to `http://localhost:4200/` to use the app.
+
+## 🔐 Authentication (OAuth Login)
+To enable Google OAuth authentication:
+1. Set up Firebase Authentication.
+2. Update `auth.service.ts` with Firebase API credentials.
+3. Login with Google or MetaMask.
+
+## 📁 Project Structure
+```
+CryptoChecker/
+│── src/
+│   ├── app/
+│   │   ├── components/
+│   │   ├── services/
+│   │   ├── app.component.ts
+│   │   ├── app.module.ts
+│   ├── assets/
+│   ├── environments/
+│   │   ├── environment.ts
+│── dist/
+│── .github/workflows/deploy.yml
+│── angular.json
+│── package.json
+│── README.md
+```
+
+## 📜 API Integration (CoinGecko)
+API requests are handled through `api.service.ts`, fetching data such as:
+- `getCurrency(currency: string)`: Fetches cryptocurrency data in the selected currency.
+- `getTrendingCurrency(currency: string)`: Gets trending cryptocurrencies.
+- `getGraphicalCurrencyData(coinId: string, currency: string, days: number)`: Retrieves historical price trends.
+- `getCurrencyById(coinId: string)`: Fetches detailed information for a specific cryptocurrency.
+
+
+## 📜 License
+This project is licensed under the MIT License.
+
 
