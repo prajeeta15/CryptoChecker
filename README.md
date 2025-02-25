@@ -1,20 +1,24 @@
 # CryptoChecker
 
 ## 🚀 Overview
-CryptoChecker is an Angular-based cryptocurrency tracking web application that provides real-time market data, trending coins, and graphical representations of price changes. The project leverages the CoinGecko API to fetch cryptocurrency data and implements OAuth login for a secure user experience.
+CryptoChecker is a powerful and user-friendly cryptocurrency tracking application. It provides real-time market data, trending coins, and historical price analysis, helping users make informed decisions about their crypto investments.
 
-## 🎯 Problem Statement
-With the rising interest in cryptocurrency investments, users need a reliable, real-time tracker that provides market trends, price analysis, and insights in an easy-to-understand format. CryptoCheckerYt aims to bridge this gap by offering an interactive and user-friendly interface for tracking cryptocurrency trends.
+## 🛠 Features
+- 🔹 **Real-Time Cryptocurrency Prices**: Fetches live market data from CoinGecko API.
+- 📈 **Graphical Analysis**: View historical price trends with interactive charts.
+- 🚀 **Trending Cryptos**: Displays the top 10 trending cryptocurrencies.
+- 🔍 **Search by Coin ID**: Get detailed information about any cryptocurrency.
+- 🌐 **Multi-Currency Support**: Allows users to select different fiat currencies.
+- 🔑 **Secure OAuth Login**: Google and MetaMask authentication for enhanced security.
+- 🔐 **Secure API Keys**: API keys are managed using environment variables for better security.
 
-## 🔍 Features & Enhancements
-### ✅ **Core Features:**
-- Real-time cryptocurrency price tracking.
-- Trending coins list sorted by market cap.
-- Graphical representation of price trends over selected timeframes.
-- Currency selector to switch between different fiat currencies.
-- OAuth login with Google/MetaMask for secure authentication.
-- Mobile-responsive UI with a modern Material Design theme.
-- GitHub Actions workflow for automated deployment.
+## 🔥 Problem Statement
+With the rapidly growing cryptocurrency market, investors and enthusiasts need a reliable, real-time tracking tool. Many existing platforms provide delayed or incomplete data, lack intuitive UI/UX, and fail to integrate essential security features like OAuth login. **CryptoChecker** solves these challenges by offering a seamless, real-time cryptocurrency tracking experience with robust security and a user-friendly interface.
+
+##Tech Stack
+Frontend: Angular, TypeScript, Bootstrap, SCSS
+Backend API: CoinGecko API
+Authentication: Firebase OAuth (Google, MetaMask)
 
 ### 🛠 **Recent Enhancements:**
 1. **Performance Optimizations:**
