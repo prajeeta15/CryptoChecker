@@ -32,7 +32,7 @@ By leveraging Angular's powerful framework, TypeScript's type safety, and SCSS f
 1. Clone the repository:
    ```sh
    git clone https://github.com/your-repo/CryptoChecker.git
-   cd CryptoCheckerYt
+   cd CryptoChecker
    ```
 2. Install dependencies:
    ```sh
@@ -42,7 +42,7 @@ By leveraging Angular's powerful framework, TypeScript's type safety, and SCSS f
    ```sh
    ng serve
    ```
-   Navigate to `http://localhost:4200/` in your browser.
+   Navigate to `http://localhost:5000/` in your browser.
 
 ## Running Tests
 - **Unit Tests:** Run `ng test` to execute tests using Karma.
