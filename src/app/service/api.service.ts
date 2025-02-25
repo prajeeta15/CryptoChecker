@@ -14,10 +14,6 @@ export class ApiService {
     return this.http.get<any>(`${this.apiUrl}/currency?vs_currency=${currency}`);
   }
 
-  getTrendingCurrency(currency: string) {
-    return this.http.get<any>(`${this.apiUrl}/trending?vs_currency=${currency}`);
-  }
-
   getGraphicalCurrencyData(coinId: string, currency: string, days: number) {
     return this.http.get<any>(`${this.apiUrl}/graphical/${coinId}?vs_currency=${currency}&days=${days}`);
   }
