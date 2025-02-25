@@ -1,18 +1,27 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { distinctUntilChanged, shareReplay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CurrencyService {
+  
+  private selectedCurrency$: BehaviorSubject<string>;
 
-  private selectedCurrency$ : BehaviorSubject<string> = new BehaviorSubject<string>("INR");
-  constructor() { }
-
-  getCurrency(){
-    return this.selectedCurrency$.asObservable();
+  constructor() {
+    const savedCurrency = localStorage.getItem('selectedCurrency') || 'INR';
+    this.selectedCurrency$ = new BehaviorSubject<string>(savedCurrency);
   }
-  setCurrency(currency : string){
-    this.selectedCurrency$.next(currency);
+
+  getCurrency(): Observable<string> {
+    return this.selectedCurrency$.asObservable()
+      .pipe(distinctUntilChanged(), shareReplay(1));
+  }
+  setCurrency(currency: string): void {
+    if (currency && currency !== this.selectedCurrency$.value) {
+      this.selectedCurrency$.next(currency);
+      localStorage.setItem('selectedCurrency', currency);
+    }
   }
 }
