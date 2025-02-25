@@ -1,27 +1,63 @@
-# CryptoCheckerYt
+# CryptoChecker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
+## Project Overview
+CryptoCheckerYt is a web application built using Angular that provides real-time cryptocurrency price tracking and analysis. It is designed to help users stay updated with the latest market trends, analyze price movements, and monitor their favorite cryptocurrencies in a user-friendly interface.
 
-## Development server
+## Problem Statement
+The cryptocurrency market is highly volatile, and prices fluctuate frequently. Traders and investors need an efficient way to track real-time price updates and analyze historical trends. Many available solutions are either too complex for beginners or lack customization options. This project aims to bridge the gap by offering a lightweight, intuitive, and responsive crypto price tracking solution.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Motive
+The main objective of CryptoCheckerYt is to create an easy-to-use cryptocurrency tracking platform that provides:
+- Real-time price updates
+- Historical price trends
+- Interactive data visualization
+- A seamless user experience with a responsive UI
 
-## Code scaffolding
+By leveraging Angular's powerful framework, TypeScript's type safety, and SCSS for modern styling, this project ensures scalability and maintainability.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
+- **Live Cryptocurrency Price Updates:** Fetches real-time prices from a reliable API.
+- **Search and Filter:** Users can search for specific cryptocurrencies and filter by market cap, volume, or other metrics.
+- **Graphical Representation:** Displays price trends in an interactive graph.
+- **Custom Watchlist:** Users can mark their favorite cryptocurrencies for quick access.
+- **Responsive Design:** Ensures usability across different devices.
+
+## Technologies Used
+- **Frontend Framework:** Angular (CLI v13.1.4)
+- **Languages:** TypeScript, JavaScript, HTML, SCSS
+- **Data Handling:** API integration for real-time data retrieval
+- **Build System:** Angular CLI
+
+## Installation & Setup
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-repo/CryptoChecker.git
+   cd CryptoCheckerYt
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Run the development server:
+   ```sh
+   ng serve
+   ```
+   Navigate to `http://localhost:4200/` in your browser.
+
+## Running Tests
+- **Unit Tests:** Run `ng test` to execute tests using Karma.
+- **End-to-End Tests:** Run `ng e2e` after adding an E2E testing package.
 
 ## Build
+To build the project, run:
+```sh
+ng build
+```
+The compiled files will be stored in the `dist/` directory.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Contribution & Support
+For any contributions, feel free to submit a pull request. If you encounter any issues, open a GitHub issue for support.
 
-## Running unit tests
+## License
+This project is open-source and available under the [MIT License](LICENSE).
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
