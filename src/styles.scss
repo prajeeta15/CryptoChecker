@@ -1,35 +1,94 @@
 // Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
-// Plus imports for other components in your app.
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
+
+// Import only necessary Material components for better performance
 @include mat.core();
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$crypto-checker-yt-primary: mat.define-palette(mat.$indigo-palette);
-$crypto-checker-yt-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-// The warn palette is optional (defaults to red).
+
+// Define primary, accent, and warn color palettes with refined shades
+$crypto-checker-yt-primary: mat.define-palette(mat.$blue-grey-palette, 700);
+$crypto-checker-yt-accent: mat.define-palette(mat.$cyan-palette, A200, A100, A400);
 $crypto-checker-yt-warn: mat.define-palette(mat.$red-palette);
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-$crypto-checker-yt-theme: mat.define-dark-theme(( color: ( primary: $crypto-checker-yt-primary, accent: $crypto-checker-yt-accent, warn: $crypto-checker-yt-warn, )));
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
+
+// Create the dark theme using Material's theming system
+$crypto-checker-yt-theme: mat.define-dark-theme((
+  color: (
+    primary: $crypto-checker-yt-primary,
+    accent: $crypto-checker-yt-accent,
+    warn: $crypto-checker-yt-warn,
+  ),
+  typography: mat.define-typography-config(), // Ensures consistency in text styles
+  density: 0 // Adjust for compact or spacious layouts
+));
+
+// Apply the theme to all Angular Material components
 @include mat.all-component-themes($crypto-checker-yt-theme);
 
-/* You can add global styles to this file, and also import other style files */
-
-html,
-body {
-    height: 100%;
+// Global Styles
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+  background: #121212; // Improved dark mode contrast
+  color: #e0e0e0; // Slightly off-white for better readability
 }
 
-body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-    background: #212121;
+// General container styling
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+// Custom button styles
+button {
+  border-radius: 8px;
+  padding: 10px 16px;
+  transition: all 0.3s ease-in-out;
+  
+  &.mat-mdc-raised-button {
+    background-color: mat.get-color-from-palette($crypto-checker-yt-primary);
+    color: white;
+  
+    &:hover {
+      background-color: mat.get-color-from-palette($crypto-checker-yt-primary, 900);
+    }
+  }
+}
+
+// Card styles for crypto data display
+.mat-mdc-card {
+  background: #1e1e1e;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  
+  h3 {
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+}
+
+// Input field styles
+.mat-mdc-form-field {
+  width: 100%;
+  
+  input {
+    color: #e0e0e0;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .mat-mdc-card {
+    padding: 12px;
+  }
+
+  button {
+    padding: 8px 12px;
+  }
 }
