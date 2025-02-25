@@ -19,7 +19,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"], 
+            "styles": ["src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -27,7 +27,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -40,8 +39,7 @@
                   "maximumError": "5mb"
                 }
               ],
-              "baseHref": "/CryptoChecker/",
-              "outputPath": "dist/CryptoChecker"
+              "baseHref": "/CryptoChecker/"
             }
           }
         },
