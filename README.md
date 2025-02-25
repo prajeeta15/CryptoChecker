@@ -1,7 +1,7 @@
 # CryptoChecker
 
 ## Project Overview
-CryptoCheckerYt is a web application built using Angular that provides real-time cryptocurrency price tracking and analysis. It is designed to help users stay updated with the latest market trends, analyze price movements, and monitor their favorite cryptocurrencies in a user-friendly interface.
+CryptoChecker is a web application built using Angular that provides real-time cryptocurrency price tracking and analysis. It is designed to help users stay updated with the latest market trends, analyze price movements, and monitor their favorite cryptocurrencies in a user-friendly interface.
 
 ## Problem Statement
 The cryptocurrency market is highly volatile, and prices fluctuate frequently. Traders and investors need an efficient way to track real-time price updates and analyze historical trends. Many available solutions are either too complex for beginners or lack customization options. This project aims to bridge the gap by offering a lightweight, intuitive, and responsive crypto price tracking solution.
