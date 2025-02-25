@@ -1,32 +1,27 @@
+import { Component } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { CurrencyService } from './service/currency.service';
-import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush // Improves performance by reducing unnecessary re-renders
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, OnDestroy {
-  selectedCurrency$!: Observable<string>; // Using Observable instead of string
-  private destroy$ = new Subject<void>(); // Used to clean up subscriptions
+export class AppComponent {
+  selectedCurrency: Observable<string>;
+  isLoading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-  constructor(private currencyService: CurrencyService) {}
-
-  ngOnInit(): void {
-    // Subscribe to currency changes and update the variable
-    this.selectedCurrency$ = this.currencyService.getCurrency();
+  constructor(private currencyService: CurrencyService) {
+    this.selectedCurrency = this.currencyService.getCurrency();
   }
 
   sendCurrency(currency: string): void {
-    console.log(currency);
+    this.isLoading.next(true); // Show loading spinner
     this.currencyService.setCurrency(currency);
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete(); // Ensures proper cleanup to prevent memory leaks
+    
+    // Simulate API fetch delay
+    setTimeout(() => {
+      this.isLoading.next(false); // Hide loading spinner after API fetch
+    }, 1000);
   }
 }
